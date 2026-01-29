@@ -1,6 +1,7 @@
 namespace LuxbinMxActions.Actions;
 
 using Loupedeck;
+using LuxbinMxActions.Services;
 
 /// <summary>
 /// Dial: Controls AI temperature (creativity) from 0.0 to 1.0.
@@ -25,6 +26,7 @@ public class TemperatureAdjustment : PluginDynamicAdjustment
         // Each tick adjusts by 0.05
         _temperature = Math.Clamp(_temperature + (diff * 0.05), 0.0, 1.0);
         _temperature = Math.Round(_temperature, 2);
+        PluginState.Temperature = _temperature;
 
         OverlayNotifier.Send("Temperature", _temperature.ToString("F2"));
         AdjustmentValueChanged();
@@ -34,6 +36,7 @@ public class TemperatureAdjustment : PluginDynamicAdjustment
     {
         // Press the dial to reset to 0.5
         _temperature = 0.5;
+        PluginState.Temperature = _temperature;
         OverlayNotifier.Send("Temperature", "0.50 (reset)");
         AdjustmentValueChanged();
     }
