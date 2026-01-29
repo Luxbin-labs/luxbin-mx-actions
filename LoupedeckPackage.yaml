@@ -1,0 +1,15 @@
+type: plugin4
+name: luxbin-mx-actions
+displayName: Luxbin MX Actions
+version: 1.0.0
+author: Nichole Christie
+copyright: Copyright 2026 Nichole Christie
+supportedDevices:
+  - LoupedeckCt
+  - LoupedeckLive
+  - LoupedeckLiveS
+  - RazerStreamController
+  - MXCreativeConsole
+pluginFileName: LuxbinMxActions.dll
+pluginFolderWin: win
+pluginFolderMac: mac
